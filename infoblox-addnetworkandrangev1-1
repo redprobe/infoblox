@@ -293,7 +293,9 @@ printernetwork ={
         'options':[
             {
                 'name':'routers',
-                'value':"10.{}.170.1".format(octet),
+                'value':"10.{}.170.1".format(octet)
+                },
+            {
                 'name':'domain-name',
                 'value':'printers.landstede.local'
                 }
