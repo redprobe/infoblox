@@ -3,6 +3,8 @@
 #Replace numbers by typing :%s/10.3./10.x./g (x is replacement)
 #v1-1: added telephony options and PXE options in JSON format 
 #
+#change: username&password, ip-address, domain name
+#
 import requests
 import json
 #ignore certificate warnings
@@ -17,10 +19,10 @@ octet = (sys.argv[1])
 warnings.filterwarnings("ignore")
 #
 session = requests.Session()
-session.auth = ('admin', 'ZfOZfjHU')
+session.auth = ('xxx', 'xxx')
 session.verify = False
 #
-url = 'https://10.240.0.125/wapi/v2.11.1/'
+url = 'https://1.2.3.4/wapi/v2.11.1/'
 #
 beheernetwork ={
         'network': "10.{}.2.0/24".format(octet),
@@ -36,7 +38,7 @@ beheernetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -49,7 +51,7 @@ beheerrange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 beheerr = session.post(url + 'range', json=beheerrange)
@@ -76,7 +78,7 @@ betalingnetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -89,7 +91,7 @@ betalingrange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 br = session.post(url + 'range', json=betalingrange)
@@ -141,7 +143,7 @@ telefonienetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -154,7 +156,7 @@ telefonierange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 tr = session.post(url + 'range', json=telefonierange)
@@ -181,7 +183,7 @@ alarmnetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -194,7 +196,7 @@ alarmrange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 ar = session.post(url + 'range', json=alarmrange)
@@ -221,7 +223,7 @@ cameranetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -234,7 +236,7 @@ camerarange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 cr = session.post(url + 'range', json=camerarange)
@@ -261,7 +263,7 @@ medianetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -274,7 +276,7 @@ mediarange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 mr = session.post(url + 'range', json=mediarange)
@@ -298,7 +300,7 @@ printernetwork ={
                 },
             {
                 'name':'domain-name',
-                'value':'printers.landstede.local'
+                'value':'printers.xxx.local'
                 },
             {
                 'name':'dhcp-lease-time',
@@ -309,7 +311,7 @@ printernetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -322,7 +324,7 @@ printerrange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 pr = session.post(url + 'range', json=printerrange)
@@ -349,7 +351,7 @@ iotnetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -362,7 +364,7 @@ iotrange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 iotr = session.post(url + 'range', json=iotrange)
@@ -389,7 +391,7 @@ b2bnetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -402,7 +404,7 @@ b2brange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 b2br = session.post(url + 'range', json=b2brange)
@@ -429,7 +431,7 @@ domeinnetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -442,7 +444,7 @@ domeinrange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 domeinr = session.post(url + 'range', json=domeinrange)
@@ -469,7 +471,7 @@ nietdomeinnetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -482,7 +484,7 @@ nietdomeinrange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 nietdomeinr = session.post(url + 'range', json=nietdomeinrange)
@@ -514,7 +516,7 @@ quarantainenetwork ={
             {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
             ]
         }
@@ -527,7 +529,7 @@ quarantainerange ={
         'member': {
                 '_struct':'dhcpmember',
                 'ipv4addr':'10.241.20.233',
-                'name':'infoblox.landstede.local'
+                'name':'infoblox.xxx.local'
             }
         }
 quarantainer = session.post(url + 'range', json=quarantainerange)
